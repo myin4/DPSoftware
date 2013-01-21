@@ -30,8 +30,12 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+
 -(IBAction)submitToServer:(id)sender
 {
+    APIController *api = [[APIController alloc] init];
+    [api exampleRequestWithASI];
+    
     MainViewController *controller = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil andUsername:tfUsername.text andPassword:tfPassword.text];
     [self.navigationController pushViewController:controller animated:YES];
     NSLog(@"\nUsernam: %@, pass: %@\n", tfUsername.text, tfPassword.text);
